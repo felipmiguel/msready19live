@@ -1,0 +1,1 @@
+mvn archetype:generate -DarchetypeArtifactId="archetype-quickstart-jdk8" -DarchetypeGroupId="com.github.ngeor" -DgroupId="com.msready19.raist213" -DartifactId="reverser" -Dversion="1.0-SNAPSHOT" -Dpackage="com.msready19.raist213"

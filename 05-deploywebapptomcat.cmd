@@ -1,0 +1,1 @@
+xcopy C:\repos\msready19\live\demowebapp\target\*.war C:\servers\apache-tomcat-9.0.22\webapps\ /y
