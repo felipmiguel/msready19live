@@ -10,6 +10,15 @@ pool:
   name: 'Ready19 Pool'
 
 steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '/home/fmiguel/java8/source/java8.tar.gz'
+    jdkDestinationDirectory: '/home/fmiguel/java8/installation'
+    cleanDestinationDirectory: true
+    
 - task: Maven@3
   inputs:
     mavenPomFile: 'demowebapp/pom.xml'
