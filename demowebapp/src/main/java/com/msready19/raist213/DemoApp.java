@@ -12,7 +12,12 @@ public class DemoApp extends Application {
     private Set<Class<?>> classes = new HashSet<Class<?>>();
 
     public DemoApp() {
-        singletons.add(new ToolsService());        
+        // classes.add(Reverser.class);
+        // classes.add(SuperUtilities.class);
+        // classes.add(ToolsService.class);
+        SuperUtilities reverser = new SuperUtilities();
+        singletons.add(new ToolsService(reverser));        
+        singletons.add(reverser);        
     }
 
     @Override

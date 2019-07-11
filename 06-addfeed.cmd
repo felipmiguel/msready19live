@@ -1,0 +1,2 @@
+copy /Y "C:\repos\msready19\complete\templates\reverserpom.xml" "C:\repos\msready19\live\reverser\pom.xml"
+copy /Y "C:\repos\msready19\complete\templates\webapppom.xml" "C:\repos\msready19\live\demowebapp\pom.xml"
