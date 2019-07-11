@@ -4,12 +4,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-  batch: true
   branches:
     include:
-    - master/*
+    - master
   paths:
-    include: 
+    include:
     - reverser/*
 
 pool:
