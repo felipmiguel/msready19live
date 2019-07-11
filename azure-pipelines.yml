@@ -29,27 +29,28 @@ steps:
   inputs:    
     mavenPomFile: 'reverser/pom.xml'
     mavenOptions: '-Xmx3072m'
+    mavenAuthenticateFeed: true
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'test'
+    goals: 'package deploy'
     codeCoverageToolOption: JaCoCo
     checkStyleRunAnalysis: true
     findBugsRunAnalysis: true
     pmdRunAnalysis: true
-- task: Maven@3
-  displayName: 'deploy to feed'
-  # condition: 'testutilities'
-  inputs:    
-    mavenAuthenticateFeed: true
-    mavenPomFile: 'reverser/pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    goals: 'deploy'
+# - task: Maven@3
+#   displayName: 'deploy to feed'
+#   # condition: 'testutilities'
+#   inputs:    
+#     mavenAuthenticateFeed: true
+#     mavenPomFile: 'reverser/pom.xml'
+#     mavenOptions: '-Xmx3072m'
+#     javaHomeOption: 'JDKVersion'
+#     jdkVersionOption: '1.8'
+#     jdkArchitectureOption: 'x64'
+#     goals: 'deploy'
 - task: CopyFiles@2
   inputs:    
     contents: 'reverser/target/*.jar'
