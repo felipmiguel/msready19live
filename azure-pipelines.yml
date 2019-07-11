@@ -18,14 +18,33 @@ steps:
     jdkFile: '/home/fmiguel/java8/source/java8.tar.gz'
     jdkDestinationDirectory: '/home/fmiguel/java8/installation'
     cleanDestinationDirectory: true
-    
 - task: Maven@3
-  inputs:
-    mavenPomFile: 'demowebapp/pom.xml'
+  name: 'testutilities'
+  displayName: 'Build superutilities'  
+  inputs:    
+    mavenPomFile: 'reverser/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'test'
+    codeCoverageToolOption: JaCoCo
+    checkStyleRunAnalysis: true
+    findBugsRunAnalysis: true
+    pmdRunAnalysis: true
+- task: CopyFiles@2
+  inputs:    
+    contents: 'reverser/target/*.jar'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifacts'
+  inputs:    
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'jar' 
+    publishLocation: 'Container'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: JUnit
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
