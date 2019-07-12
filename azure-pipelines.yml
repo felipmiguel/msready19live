@@ -29,13 +29,12 @@ steps:
   inputs:    
     mavenPomFile: 'reverser/pom.xml'
     mavenOptions: '-Xmx3072m'
-    mavenAuthenticateFeed: true
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'deploy'
+    goals: 'package'
     codeCoverageToolOption: JaCoCo
     checkStyleRunAnalysis: true
     findBugsRunAnalysis: true
