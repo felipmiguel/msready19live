@@ -14,4 +14,13 @@ public class SuperUtilitiesTest {
         String actual = r.doReverse(source);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void doReverse2() {
+        String source = "abcdef";
+        String expected = "fedcba";
+        SuperUtilities r = new SuperUtilities();
+        String actual = r.doReverse(source);
+        assertEquals(expected, actual);
+    }
 }
