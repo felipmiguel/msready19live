@@ -19,8 +19,8 @@
     </dependencies>
     <repositories>
         <repository>
-            <id>dev-azure-com-msblox-03-ready19livefeed</id>
-            <url>https://pkgs.dev.azure.com/msblox-03/_packaging/ready19livefeed/maven/v1</url>
+            <id>dev-azure-com-msblox-03-ready19livedemo</id>
+            <url>https://pkgs.dev.azure.com/msblox-03/_packaging/ready19livedemo/maven/v1</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -31,8 +31,8 @@
     </repositories>
     <distributionManagement>
         <repository>
-            <id>dev-azure-com-msblox-03-ready19livefeed</id>
-            <url>https://pkgs.dev.azure.com/msblox-03/_packaging/ready19livefeed/maven/v1</url>
+            <id>dev-azure-com-msblox-03-ready19livedemo</id>
+            <url>https://pkgs.dev.azure.com/msblox-03/_packaging/ready19livedemo/maven/v1</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
