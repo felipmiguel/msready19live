@@ -1,4 +1,4 @@
 
-demowebapp/target
-demoseapp/target
-reverser/target
+demoseapp/target/*
+reverser/target/*
+demowebapp/target/*
