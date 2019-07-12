@@ -11,7 +11,7 @@ $(function () {
                 $("#result").val(data);
             });
     });
-    $("#btnReverseSpring").click(function () {
+    $("#btnEchoSE").click(function () {
         $.post('https://raist213javase.azurewebsites.net/echo',
             $("#inputform").serialize(), function (data, status) {
                 $("#result").val(data);
