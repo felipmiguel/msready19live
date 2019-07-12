@@ -1,0 +1,2 @@
+copy /Y "C:\repos\msready19\complete\demoseapp\src\main\java\com\msready19\raist213\demoseapp\SampleApi.java" "C:\repos\msready19\live\demoseapp\src\main\java\com\msready19\raist213\demoseapp\" 
+copy /Y "C:\repos\msready19\complete\demoseapp\src\test\java\com\msready19\raist213\demoseapp\DemoApplicationTests.java" "C:\repos\msready19\live\demoseapp\src\test\java\com\msready19\raist213\demoseapp\" 

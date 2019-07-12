@@ -10,7 +10,6 @@
         <input name="source" id="sampleinput" type="text" value="" />
     </form>
     <input id="btnEcho" type="button" value="Echo">
-    <input id="btnReverse" type="button" value="Reverse">
     <br />
 
     <label for="result">Result</label>
