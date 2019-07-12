@@ -38,21 +38,21 @@
       <version>3.8.0.Final</version>
     </dependency>
     <dependency>
+      <groupId>com.msready19.raist213</groupId>
+      <artifactId>reverser</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>com.msready19.raist213</groupId>
-      <artifactId>reverser</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
   </dependencies>
   <repositories>
     <repository>
-      <id>msblox-03-visualstudio-com-msblox-03-ready19livefeed</id>
-      <url>https://msblox-03.pkgs.visualstudio.com/_packaging/ready19livefeed/maven/v1</url>
+      <id>dev-azure-com-msblox-03-ready19livedemo</id>
+      <url>https://pkgs.dev.azure.com/msblox-03/_packaging/ready19livedemo/maven/v1</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -63,8 +63,8 @@
   </repositories>
   <distributionManagement>
     <repository>
-      <id>msblox-03-visualstudio-com-msblox-03-ready19livefeed</id>
-      <url>https://msblox-03.pkgs.visualstudio.com/_packaging/ready19livefeed/maven/v1</url>
+      <id>dev-azure-com-msblox-03-ready19livedemo</id>
+      <url>https://pkgs.dev.azure.com/msblox-03/_packaging/ready19livedemo/maven/v1</url>
       <releases>
         <enabled>true</enabled>
       </releases>

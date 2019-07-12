@@ -12,7 +12,8 @@ public class DemoApp extends Application {
     private Set<Class<?>> classes = new HashSet<Class<?>>();
 
     public DemoApp() {
-        singletons.add(new ToolsService());
+        SuperUtilities reverser = new SuperUtilities();
+        singletons.add(new ToolsService(reverser));        
     }
 
     @Override
