@@ -9,7 +9,7 @@ public class SuperUtilitiesTest {
     @Test
     public void doReverse() {
         String source = "abcde";
-        String expected = "edcba";
+        String expected = "reversing: " + "edcba";
         SuperUtilities r = new SuperUtilities();
         String actual = r.doReverse(source);
         assertEquals(expected, actual);
