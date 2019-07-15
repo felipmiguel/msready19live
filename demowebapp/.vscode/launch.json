@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         
-        // {
-        //     "type": "java",
-        //     "name": "Attach WebLogic",
-        //     "request": "attach",
-        //     "hostName": "localhost",
-        //     "port": 8453
-        // },
+        {
+            "type": "java",
+            "name": "Attach WebLogic",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 8453
+        },
         {
             "type": "java",
             "name": "Attach Tomcat",
