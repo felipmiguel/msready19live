@@ -10,13 +10,22 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '/home/javalocaltion'
+    jdkDestinationDirectory: 'java'
+    cleanDestinationDirectory: true
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'reverser/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
+    codeCoverageToolOption: JaCoCo,
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
