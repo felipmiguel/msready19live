@@ -3,16 +3,32 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
-trigger:
-- master
-
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Ready19 Pool
+
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - reverser/*
 
 steps:
-- task: Maven@3
+- task: JavaToolInstaller@0
   inputs:
-    mavenPomFile: 'reserve/pom.xml'
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '/home/fmiguel/java8/source/java8.tar.gz'
+    jdkDestinationDirectory: '/home/fmiguel/java8/installation'
+    cleanDestinationDirectory: true
+
+- task: Maven@3
+  name: 'testutilities'
+  displayName: 'Build superutilities'  
+  inputs:    
+    mavenPomFile: 'reverser/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
@@ -20,3 +36,23 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    codeCoverageToolOption: JaCoCo
+    checkStyleRunAnalysis: true
+    findBugsRunAnalysis: true
+    pmdRunAnalysis: true
+
+- task: CopyFiles@2
+  inputs:    
+    contents: 'reverser/target/*.jar'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Build Artifacts'
+  inputs:    
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'jar' 
+    publishLocation: 'Container'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: JUnit
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
