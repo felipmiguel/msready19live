@@ -12,13 +12,13 @@
         //     "hostName": "localhost",
         //     "port": 8453
         // },
-        // {
-        //     "type": "java",
-        //     "name": "Attach Tomcat",
-        //     "request": "attach",
-        //     "hostName": "localhost",
-        //     "port": 8000
-        // }
+        {
+            "type": "java",
+            "name": "Attach Tomcat",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 8000
+        }
 
     ]
 }
