@@ -7,6 +7,6 @@ public class SuperUtilities {
         for (int i = 0; i < length; i++) {
             tmpResult[i] = source.charAt(length - i - 1);
         }
-        return new String(tmpResult);
+        return "reversed " + new String(tmpResult);
     }
 }
